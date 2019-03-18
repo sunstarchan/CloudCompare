@@ -29,7 +29,6 @@
 #include "VTKFilter.h"
 //MESHES
 #include "FBXFilter.h"
-#include "MAFilter.h"
 #include "ObjFilter.h"
 #include "OFFFilter.h"
 #include "PlyFilter.h"
@@ -106,7 +105,6 @@ void FileIOFilter::InitInternalFilters()
 	Register(Shared(new RasterGridFilter()));
 #endif
 	Register(Shared(new ImageFileFilter()));
-	Register(Shared(new MAFilter()));
 	Register(Shared(new DepthMapFileFilter()));
 }
 

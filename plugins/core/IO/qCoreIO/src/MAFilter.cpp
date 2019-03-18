@@ -58,7 +58,7 @@ struct edge
 	edge* nextEdge;
 };
 
-void ReleaseEdgeList(edge**& theEdges, unsigned numberOfVertexes, CCLib::NormalizedProgress* nprogress = 0)
+void ReleaseEdgeList(edge**& theEdges, unsigned numberOfVertexes, CCLib::NormalizedProgress* nprogress = nullptr)
 {
 	for (unsigned i = 0; i < numberOfVertexes; ++i)
 	{
@@ -80,7 +80,7 @@ void ReleaseEdgeList(edge**& theEdges, unsigned numberOfVertexes, CCLib::Normali
 		}
 	}
 	delete[] theEdges;
-	theEdges = 0;
+	theEdges = nullptr;
 }
 
 struct faceIndexes
@@ -132,7 +132,7 @@ CC_FILE_ERROR MAFilter::saveToFile(ccHObject* entity, const QString& filename, c
 		return CC_FERR_WRITING;
 
 	//progress dialog
-	QScopedPointer<ccProgressDialog> pDlg(0);
+	QScopedPointer<ccProgressDialog> pDlg(nullptr);
 	const int coloursAdjustment = (hasColors ? 1 : 0);
 	if (parameters.parentWidget)
 	{
@@ -426,7 +426,7 @@ CC_FILE_ERROR MAFilter::saveToFile(ccHObject* entity, const QString& filename, c
 
 	//free memory
 	{
-		ReleaseEdgeList(theEdges, numberOfVertexes, pDlg ? &nprogress : 0);
+		ReleaseEdgeList(theEdges, numberOfVertexes, pDlg ? &nprogress : nullptr);
 	}
 
 	//bonus track
@@ -543,7 +543,7 @@ CC_FILE_ERROR MAFilter::saveToFile(ccHObject* entity, const QString& filename, c
 			}
 		}
 		delete[] theFacesIndexes;
-		theFacesIndexes = 0;
+		theFacesIndexes = nullptr;
 
 		if (fprintf(fp,"\tsetAttr \".cn\" -type \"string\" \"colorSet%i\";\n",currentMesh+1) < 0)
 		{

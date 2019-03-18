@@ -17,8 +17,8 @@
 
 #include "qCoreIO.h"
 
-#include "DepthMapFileFilter.h"
 #include "HeightProfileFilter.h"
+#include "MAFilter.h"
 #include "MascaretFilter.h"
 
 qCoreIO::qCoreIO( QObject *parent ) :
@@ -35,7 +35,7 @@ void qCoreIO::registerCommands( ccCommandLineInterface *inCmdLine )
 QVector<FileIOFilter::Shared> qCoreIO::getFilters()
 {
 	return QVector<FileIOFilter::Shared>{
-		FileIOFilter::Shared( new DepthMapFileFilter ),
+		FileIOFilter::Shared( new MAFilter ),
 		FileIOFilter::Shared( new MascaretFilter ),
 		FileIOFilter::Shared( new HeightProfileFilter ),
 	};
