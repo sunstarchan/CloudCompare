@@ -70,7 +70,7 @@ CC_FILE_ERROR HeightProfileFilter::saveToFile(ccHObject* entity, const QString& 
 
 	//curvilinear abscissa
 	double s = 0;
-	const CCVector3* lastP = 0;
+	const CCVector3* lastP = nullptr;
 	for (unsigned j = 0; j < vertCount; ++j)
 	{
 		const CCVector3* P = poly->getPoint(j);

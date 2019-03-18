@@ -38,9 +38,7 @@
 //OTHERS
 #include "DepthMapFileFilter.h"
 #include "DxfFilter.h"
-#include "HeightProfileFilter.h"
 #include "ImageFileFilter.h"
-#include "MascaretFilter.h"
 #include "RasterGridFilter.h"
 #include "ShpFilter.h"
 
@@ -110,8 +108,6 @@ void FileIOFilter::InitInternalFilters()
 	Register(Shared(new ImageFileFilter()));
 	Register(Shared(new MAFilter()));
 	Register(Shared(new DepthMapFileFilter()));
-	Register(Shared(new MascaretFilter()));
-	Register(Shared(new HeightProfileFilter()));
 }
 
 void FileIOFilter::Register(Shared filter)

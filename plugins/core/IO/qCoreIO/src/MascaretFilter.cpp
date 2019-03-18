@@ -25,12 +25,12 @@
 #include <ccPolyline.h>
 
 //Qt
+#include <QDialog>
 #include <QFile>
 #include <QTextStream>
-#include <QDialog>
 
 //System
-#include <string.h>
+#include <cstring>
 
 //! Mascaret File Save dialog
 class SaveMascaretFileDlg : public QDialog, public Ui::SaveMascaretFileDlg
@@ -39,7 +39,7 @@ class SaveMascaretFileDlg : public QDialog, public Ui::SaveMascaretFileDlg
 	
 public:
 	//! Default constructor
-	SaveMascaretFileDlg(QWidget* parent = 0)
+	SaveMascaretFileDlg(QWidget* parent = nullptr)
 		: QDialog(parent, Qt::Tool)
 		, Ui::SaveMascaretFileDlg()
 	{
